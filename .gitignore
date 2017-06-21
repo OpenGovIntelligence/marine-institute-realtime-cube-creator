@@ -1,0 +1,16 @@
+*.*~
+*.pyc
+venv/
+.idea/
+
+MI_ds1_data/
+testingMIAPIs/
+testing_virtuso_tasks/
+testingcubeBuilerAPI/
+testingsparkkafka/.ipynb_checkpoints/
+
+*.log
+
+
+
+

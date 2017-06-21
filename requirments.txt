@@ -1,0 +1,12 @@
+findspark
+requests
+requests[security]
+kafka
+avro
+schedule
+datetime
+urllib2
+urllib3
+
+
+
