@@ -1,6 +1,7 @@
 *.*~
 *.pyc
 venv/
+vevn/
 .idea/
 
 MI_ds1_data/
@@ -10,7 +11,3 @@ testingcubeBuilerAPI/
 testingsparkkafka/.ipynb_checkpoints/
 
 *.log
-
-
-
-
