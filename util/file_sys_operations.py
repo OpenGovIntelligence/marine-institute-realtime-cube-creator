@@ -1,55 +1,62 @@
-from mLogger import Logee
-import json
 
+#libraries
 import csv
-import urllib2
+import json
+import os
 
-class File_sys:
+#objects
+from util.mLogger import logee
+
+#vars
+from util.config import log_file, log_name, log_dir
+
+class FileOperations:
 
     # constructor
     def __init__(self):
         # initiate logger object
-        global logee
-        logee = Logee("pulishing_pipeline.log", "pulishing_pipeline:file_sys")
-
-
-
+        global log
+        log = logee(log_dir, log_file, log_name)
 
     def store_json_data_to_file_system(self, sender, json_data):
 
-        logee.info('storing to file system.')
-        path = "MI_ds1_data/"
+        log.info('storing to file system.')
+        path = "outpts/"
         file_name = self.creating_file_name(sender)
-        import os
+
         if not os.path.exists(path):
             try:
                 os.makedirs(path)
             except OSError as exception:
-                logee.error(exception)
+                log.error(exception)
         with open(path + file_name, 'w+') as outfile:
             json.dump(json_data, outfile)
 
-    def store_csv_data_to_file_system(self, sender, csv_data):
 
-        logee.logger.info('storing to file system.')
-        path = "MI_ds1_data/"
+    #the one in use
+    def store_csv_data_to_file_system(self, csv_data, sender):
+
+        log.logger.info('storing to file system.')
+        outputs_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, 'outputs'))
+        #path = "outputs/"
         file_name = self.creating_file_name(sender)
-        import os
-        if not os.path.exists(path):
+
+        if not os.path.exists(outputs_dir):
             try:
-                os.makedirs(path)
+                os.makedirs(outputs_dir)
             except OSError as exception:
-                logee.logger.error(exception)
+                log.logger.error(exception)
         #csvReader = csv.reader(csv_data)
-        csvWriter = csv.writer(open(path + file_name, 'w+'), delimiter=',', quotechar = '"', quoting = csv.QUOTE_MINIMAL)
+        csvWriter = csv.writer(open(outputs_dir +"/"+ file_name, 'w+'), delimiter=',', quotechar = '"', quoting = csv.QUOTE_MINIMAL)
         #csv_data.next()  # skip header line
         #csv_data.next()  # skip header line
         for line in csv_data:
+            print line
             csvWriter.writerow(line)
 
     """search_output_dir_for_previous_responses function used in quality and lof service to chick previous file system cached responses"""
     def search_output_dir_for_previous_responses(file_name, path):
-        import os
+
 
         for root, dirs, files in os.walk(path):
             if file_name in files:
@@ -60,7 +67,7 @@ class File_sys:
         # storing responses to file system for faster response time
         #setting default variables values
         features_names = ""
-        json_response = "error.json"
+        file_name = "error_Nameing.csv"
         # try catch statemnt for error handling
         try:
 
@@ -69,7 +76,7 @@ class File_sys:
         # incase compiler catched an error
         except Exception, e:
             # logging error
-            logee.logger.error(e)
+            log.logger.error(e)
 
 
         return file_name

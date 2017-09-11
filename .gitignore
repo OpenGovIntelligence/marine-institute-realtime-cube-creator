@@ -11,6 +11,11 @@ testingsparkkafka/.ipynb_checkpoints/
 
 *.log
 
+testing/
+test*.*
+testing*/
 
+.DS_Store
+/.DS_Store
 
 

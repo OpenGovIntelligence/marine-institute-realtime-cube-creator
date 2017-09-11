@@ -6,16 +6,21 @@ import gc
 # enable full error tracing in responses
 import traceback
 
-class Logee:
+import os
+
+class logee:
 
     global logger
 
 
-    def __init__(self, log_file_name, app_name ):
+    def __init__(self, log_dir, log_file_name, app_name ):
 
         # logging configuration
+        if not os.path.exists(log_dir):
+            os.makedirs(log_dir)
 
         LOG_FILENAME = log_file_name # 'collaboration.log'
+
         # create logger
         self.logger = logging.getLogger(app_name)#"rtpa-collaboration-analysis-class Dbpedia")
         self.logger.setLevel(logging.DEBUG)
@@ -36,6 +41,5 @@ class Logee:
 
         # enabling garabage collector
         gc.enable()
-
 
 

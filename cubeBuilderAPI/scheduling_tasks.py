@@ -1,10 +1,11 @@
-import schedule
-import time,datetime
-from MI_API import Ds_API
-
-import urllib
 import datetime
-from datetime import  timedelta
+import datetime
+import schedule
+import time
+import urllib
+from datetime import timedelta
+
+from marineDataAPI.marineAPI import Ds_API
 
 #todo : logging
 
