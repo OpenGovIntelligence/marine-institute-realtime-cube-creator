@@ -10,4 +10,14 @@ testing_virtuso_tasks/
 testingcubeBuilerAPI/
 testingsparkkafka/.ipynb_checkpoints/
 
+.DS_Store
+/.DS_Store
+.DS_Store/
+/.DS_Store/
 *.log
+
+
+testing/
+testing*/
+test*.*
+
