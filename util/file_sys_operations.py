@@ -50,10 +50,12 @@ class FileOperations:
         csvWriter = csv.writer(open(outputs_dir +"/"+ file_name, 'w+'), delimiter=',', quotechar = '"', quoting = csv.QUOTE_MINIMAL)
         #csv_data.next()  # skip header line
         #csv_data.next()  # skip header line
+        row = 0 # to ignore unites row
         for line in csv_data:
-            print line
-            csvWriter.writerow(line)
-
+            if row != 1:
+                print line
+                csvWriter.writerow(line)
+            row += 1
     """search_output_dir_for_previous_responses function used in quality and lof service to chick previous file system cached responses"""
     def search_output_dir_for_previous_responses(file_name, path):
 

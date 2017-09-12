@@ -14,10 +14,11 @@ cubeBuilderAPI = "http://localhost:4567/cubeBuilderAPI/cubeBuilderArgs?"
 
 
 #dataSets/schemas names turtle-stored
-ds_IWBNetwork = "IWBNetwork"
-ds_IrishNationalTideGaugeNetwork = "IrishNationalTideGaugeNetwork"
-ds_IWaveBNetwork_spectral="IWaveBNetwork_spectral"
-ds_IWaveBNetwork_zerocrossing="IWaveBNetwork_zerocrossing"
+ds_names = {}
+ds_names['ds_IWBNetwork'] = "IWBNetwork"
+ds_names['ds_IrishNationalTideGaugeNetwork'] = "IrishNationalTideGaugeNetwork"
+ds_names['ds_IWaveBNetwork_spectral'] = "IWaveBNetwork_spectral"
+ds_names['ds_IWaveBNetwork_zerocrossing'] = "IWaveBNetwork_zerocrossing"
 
 
 """
