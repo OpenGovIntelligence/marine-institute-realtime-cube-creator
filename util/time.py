@@ -22,7 +22,6 @@ class TimeOperations:
         #   print URI_encoded
         return URI_decoded
 
-
     #get yesterday time
     def getTimeFromEncoded(self):
 
@@ -33,18 +32,20 @@ class TimeOperations:
 
         # print decode(time_from)
 
-        print time_from
-        print datetime.datetime.now().replace(microsecond=0).isoformat()
-        print self.encode(datetime.datetime.now().replace(microsecond=0).isoformat())
+        #print time_from
+        #print datetime.datetime.now().replace(microsecond=0).isoformat()
+        #print self.encode(datetime.datetime.now().replace(microsecond=0).isoformat())
 
         yesterday = datetime.datetime.now() - timedelta(days=1)
-        yesterday.strftime('%m%d%y')
+        #yesterday.strftime('%m%d%y')
 
         print yesterday
 
-        print self.encode(yesterday.replace(microsecond=0).isoformat())
+        #print self.encode(yesterday.replace(microsecond=0).isoformat())
 
         time_from = self.encode(yesterday.replace(microsecond=0).isoformat())
+
+        print time_from
 
         return time_from
 
@@ -57,18 +58,21 @@ class TimeOperations:
 
         # print decode(time_from)
 
-        print time_to
-        print datetime.datetime.now().replace(microsecond=0).isoformat()
-        print self.encode(datetime.datetime.now().replace(microsecond=0).isoformat())
+        #print time_to
+        #print datetime.datetime.now().replace(microsecond=0).isoformat()
+        #print self.encode(datetime.datetime.now().replace(microsecond=0).isoformat())
 
         today = datetime.datetime.now()
-        today.strftime('%m%d%y')
+        #today.strftime('%m%d%y')
 
         print today
 
-        print self.encode(today.replace(microsecond=0).isoformat())
+        #print self.encode(today.replace(microsecond=0).isoformat())
 
         time_to = self.encode(today.replace(microsecond=0).isoformat())
+
+        print time_to
+
 
         return time_to
 
@@ -79,20 +83,20 @@ class TimeOperations:
 
         # print encode(time_from)
 
-        # print decode(time_from)
+        #print decode(time_from)
 
-        print time_from
-        print datetime.datetime.now().replace(microsecond=0).isoformat()
-        print self.encode(datetime.datetime.now().replace(microsecond=0).isoformat())
+        #print time_from
+
 
         yesterday = datetime.datetime.now() - timedelta(days=1)
-        yesterday.strftime('%m%d%y')
+        #yesterday.strftime('%m%d%y')
 
         print yesterday
 
-        #print self.encode(yesterday.replace(microsecond=0).isoformat())
 
         time_from = yesterday.replace(microsecond=0).isoformat()
+
+        print time_from
 
         return time_from
 
@@ -104,17 +108,29 @@ class TimeOperations:
 
         # print decode(time_from)
 
-        print time_to
-        print datetime.datetime.now().replace(microsecond=0).isoformat()
-        print self.encode(datetime.datetime.now().replace(microsecond=0).isoformat())
+        # print time_to
+        # print datetime.datetime.now().replace(microsecond=0).isoformat()
+        # print self.encode(datetime.datetime.now().replace(microsecond=0).isoformat())
 
         today = datetime.datetime.now()
-        today.strftime('%m%d%y')
+        # today.strftime('%m%d%y')
 
         print today
 
-        #print self.encode(today.replace(microsecond=0).isoformat())
+        # print self.encode(today.replace(microsecond=0).isoformat())
 
-        time_to = today.replace(microsecond=0).isoformat()
+        time_to = self.encode(today.replace(microsecond=0).isoformat())
 
-        return time_to
+        print self.decode(time_to)
+
+
+
+        return self.decode(time_to)
+
+
+test = TimeOperations()
+
+#test.getTimeToEncoded()
+#test.getTimeTo()
+test.getTimeFrom()
+test.getTimeFromEncoded()

@@ -19,11 +19,11 @@ time=TimeOperations()
 
 
 #prepare time
-timeStartFrom_encoded=time.getTimeFrom()
-timeEndAt_encoded=time.getTimeTo()
+timeStartFrom_encoded=time.getTimeFromEncoded()
+timeEndAt_encoded=time.getTimeToEncoded()
 
-timeStartFrom=time.getTimeFromEncoded()
-timeEndAt=time.getTimeToEncoded()
+timeStartFrom=time.getTimeFrom()
+timeEndAt=time.getTimeTo()
 
 #prepare datasets names
 

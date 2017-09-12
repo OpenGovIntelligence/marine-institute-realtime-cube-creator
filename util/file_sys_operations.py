@@ -8,7 +8,7 @@ import os
 from util.mLogger import logee
 
 #vars
-from util.config import log_file, log_name, log_dir
+from util.config import log_file, log_name, log_dir, outputsCSV_dir
 
 class FileOperations:
 
@@ -37,17 +37,17 @@ class FileOperations:
     def store_csv_data_to_file_system(self, csv_data, sender):
 
         log.logger.info('storing to file system.')
-        outputs_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, 'outputs'))
-        #path = "outputs/"
+        #outputs_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, 'outputsCSV'))
+        #path = "outputsCSV/"
         file_name = self.creating_file_name(sender)
 
-        if not os.path.exists(outputs_dir):
+        if not os.path.exists(outputsCSV_dir):
             try:
-                os.makedirs(outputs_dir)
+                os.makedirs(outputsCSV_dir)
             except OSError as exception:
                 log.logger.error(exception)
         #csvReader = csv.reader(csv_data)
-        csvWriter = csv.writer(open(outputs_dir +"/"+ file_name, 'w+'), delimiter=',', quotechar = '"', quoting = csv.QUOTE_MINIMAL)
+        csvWriter = csv.writer(open(outputsCSV_dir +"/"+ file_name, 'w+'), delimiter=',', quotechar = '"', quoting = csv.QUOTE_MINIMAL)
         #csv_data.next()  # skip header line
         #csv_data.next()  # skip header line
         row = 0 # to ignore unites row

@@ -11,14 +11,30 @@ log_name="ogi-realtime-service"
 #cube builder API
 cubeBuilderAPI = "http://localhost:4567/cubeBuilderAPI/cubeBuilderArgs?"
 
+"""
+"> http://localhost:4567/cubeBuilderAPI/cubeBuilderArgs?" \
+"csv=/ogi-CubeSchema-creator/example_1/IWaveBNetwork_spectral.csv" \
+"&schema=/ogi-cubebuilder/src/main/resources/IWaveBNetowrk_spectral_output.ttl" \
+"&serializationIn=TURTLE" \
+"&serializationOut=TURTLE" \
+"&qbPath=/ogi-cubebuilder/test_output/" \
+"&qbName=webtest.ttl"
+"""
 
-
-#dataSets/schemas names turtle-stored
+#dataSets/inputsSchemas names turtle-stored
 ds_names = {}
 ds_names['ds_IWBNetwork'] = "IWBNetwork"
 ds_names['ds_IrishNationalTideGaugeNetwork'] = "IrishNationalTideGaugeNetwork"
 ds_names['ds_IWaveBNetwork_spectral'] = "IWaveBNetwork_spectral"
 ds_names['ds_IWaveBNetwork_zerocrossing'] = "IWaveBNetwork_zerocrossing"
+
+outputsCSV_dir =os.path.abspath( os.path.join(os.path.dirname(__file__),os.pardir,'outputsCSV'))
+outputsCSV_dir_for_builder = "/ogi-publishing-pipeline-realtime/outputsCSV"
+inputsSchemas_dir = "/ogi-publishing-pipeline-realtime/inputsSchemas"
+    #os.path.abspath( os.path.join(os.path.dirname(__file__),os.pardir,'inputsSchemas'))
+outputsCubes_dir = "/ogi-publishing-pipeline-realtime/outputsCubes"
+    #os.path.abspath( os.path.join(os.path.dirname(__file__),os.pardir,'outputsCubes'))
+
 
 
 """

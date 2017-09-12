@@ -1,10 +1,16 @@
-import urllib3
+import urllib
 
 
-class Encode:
+class EncodeDecode:
 
 
-    def encode (self,URl):
-        URl_encoded = urllib3.quote_plus(URl)
+
+    def encode(self, URL):
+        URI_encoded = urllib.quote_plus(URL)
         #   print URI_encoded
-        return URl_encoded
+        return URI_encoded
+
+    def decode(self, URL):
+        URI_decoded = urllib.unquote(URL)
+        #   print URI_encoded
+        return URI_decoded
