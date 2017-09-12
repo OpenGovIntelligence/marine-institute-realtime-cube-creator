@@ -14,19 +14,36 @@ cubebuilder = CubeBuilder()
 
 
 
-#transformToRDFcube(self, cubebuilderapi, csv_file_path, csv_file_name, schema_path,schema_name, serialization_in,
-                           #serialization_out, qbpath, qbname):
+#sending post request to the cube builderr service
+cubebuilder.transformToRDFcube_POST(
 
-cubebuilder.transformToRDFcube_GET(
     cubeBuilderAPI,
     outputsCSV_dir_for_builder,
-  "IrishNationalTideGaugeNetwork__SRARTED__2017-09-11T16:42:57__TO__2017-09-12T16:42:57.csv",
+    "IrishNationalTideGaugeNetwork__SRARTED__2017-09-11T16:42:57__TO__2017-09-12T16:42:57.csv",
     inputsSchemas_dir,
     "IrishNationalTideGaugeNetwork",
     "TURTLE",
     "TURTLE",
     outputsCubes_dir,
-   "IrishNationalTideGaugeNetwork__SRARTED__2017-09-11T16:42:57__TO__2017-09-12T16:42:5",#without .csv
+    "IrishNationalTideGaugeNetwork__SRARTED__2017-09-11T16:42:57__TO__2017-09-12T16:42:5"#without .csv
+
+)
+
+
+#transformToRDFcube(self, cubebuilderapi, csv_file_path, csv_file_name, schema_path,schema_name, serialization_in,
+                           #serialization_out, qbpath, qbname):
+
+cubebuilder.transformToRDFcube_GET(
+
+    cubeBuilderAPI,
+    outputsCSV_dir_for_builder,
+    "IrishNationalTideGaugeNetwork__SRARTED__2017-09-11T16:42:57__TO__2017-09-12T16:42:57.csv",
+    inputsSchemas_dir,
+    "IrishNationalTideGaugeNetwork",
+    "TURTLE",
+    "TURTLE",
+    outputsCubes_dir,
+    "IrishNationalTideGaugeNetwork__SRARTED__2017-09-11T16:42:57__TO__2017-09-12T16:42:5"#without .csv
 
 )
 
