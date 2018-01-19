@@ -1,6 +1,6 @@
 
 #objects
-from util.urlEncode import Encode
+from util.urlEncode import EncodeDecode
 from marineDataAPI.marineAPI import MarineAPI
 from util.time import TimeOperations
 
@@ -11,7 +11,7 @@ global marineAPI
 marineAPI = MarineAPI()
 
 global encode
-encode = Encode()
+encode = EncodeDecode()
 
 global time
 time=TimeOperations()
