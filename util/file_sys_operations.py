@@ -8,7 +8,7 @@ import os
 from util.mLogger import logee
 
 #vars
-from util.config import log_file, log_name, log_dir, outputsCSV_dir
+from util.config import log_file, log_name, log_dir, outputsCSV_dir, skip_units_row
 
 class FileOperations:
 
@@ -52,10 +52,14 @@ class FileOperations:
         #csv_data.next()  # skip header line
         row = 0 # to ignore unites row
         for line in csv_data:
-            if row != 1:
+            if skip_units_row:
+                if row != 1:
+                    print line
+                    csvWriter.writerow(line)
+                row += 1
+            else:
                 print line
                 csvWriter.writerow(line)
-            row += 1
     """search_output_dir_for_previous_responses function used in quality and lof service to chick previous file system cached responses"""
     def search_output_dir_for_previous_responses(file_name, path):
 

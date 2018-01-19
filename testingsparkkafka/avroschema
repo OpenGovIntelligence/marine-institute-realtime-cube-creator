@@ -1,6 +1,6 @@
 {
    " type " : "record",
-   " namespace " : "Tutorialspoint",
+   " namespace " : "test",
    " name " : "Employee",
    " fields " : [
       { "name" : " Name" , "type" : "string" },

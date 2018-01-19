@@ -1,12 +1,8 @@
-#findspark
-requests
-requests[security]
-#kafka
-#avro
 schedule
 datetime
 urllib2
 urllib3
-
+rdflib==4.2.2
+SPARQLWrapper==1.7.6
 
 
