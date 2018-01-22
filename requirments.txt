@@ -2,7 +2,5 @@ schedule
 datetime
 rdflib==4.2.2
 SPARQLWrapper==1.7.6
-urllib
-urllib2
 urllib3
 

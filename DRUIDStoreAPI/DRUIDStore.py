@@ -10,11 +10,11 @@ import os
 from rdflib.plugins.stores import sparqlstore
 
 #objects
-from util.mLogger import logee
+from util_bk.mLogger import logee
 
 #vars
-from util.config import log_dir, log_name, log_file
-from util.config import endpoint_password, endpoint_rdf_store_url,\
+from util_bk.config import log_dir, log_name, log_file
+from util_bk.config import endpoint_password, endpoint_rdf_store_url,\
     endpoint_user_name, prefixes, endpoint_rdf_store_url_crud, testing_graph_name
 
 

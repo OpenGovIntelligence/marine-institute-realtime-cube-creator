@@ -1,10 +1,10 @@
 
 #objects
 from cubeBuilderAPI.cubeBuilder import CubeBuilder
-from util.urlEncode import EncodeDecode
+from util_bk.urlEncode import EncodeDecode
 
 #vars
-from util.config import cubeBuilderAPI, outputsCSV_dir_for_builder, inputsSchemas_dir, outputsCubes_dir
+from util_bk.config import cubeBuilderAPI, outputsCSV_dir_for_builder, inputsSchemas_dir, outputsCubes_dir
 
 
 

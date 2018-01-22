@@ -1,6 +1,6 @@
 import csv
 import json
-import requests
+#import requests
 import urllib2
 
 #objects

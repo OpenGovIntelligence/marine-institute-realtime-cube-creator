@@ -1,3 +1,7 @@
+import sys
+
+#sys.path.append('.././util')
+
 
 #objects
 from util.urlEncode import EncodeDecode
