@@ -26,7 +26,7 @@ class TimeOperations:
     def getTimeFromEncoded(self):
 
 
-        time_from = "time%3E=2017-06-07T00%3A00%3A00Z"
+        time_from = "2010-01-01T00%3A00%3A00Z"
 
         # print encode(time_from)
 
@@ -42,8 +42,8 @@ class TimeOperations:
         print yesterday
 
         #print self.encode(yesterday.replace(microsecond=0).isoformat())
-
-        time_from = self.encode(yesterday.replace(microsecond=0).isoformat())
+        # @TODO uncomment after initial download
+        """time_from = self.encode(yesterday.replace(microsecond=0).isoformat())"""
 
         print time_from
 
@@ -79,7 +79,7 @@ class TimeOperations:
     def getTimeFrom(self):
 
 
-        time_from = "time%3E=2017-06-07T00%3A00%3A00Z"
+        time_from = "2010-01-01T00%3A00%3A00Z"
 
         # print encode(time_from)
 
@@ -93,8 +93,8 @@ class TimeOperations:
 
         print yesterday
 
-
-        time_from = yesterday.replace(microsecond=0).isoformat()
+        #@TODO uncomment after initial download
+        """time_from = yesterday.replace(microsecond=0).isoformat()"""
 
         print time_from
 
