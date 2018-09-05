@@ -3,4 +3,7 @@ datetime
 rdflib==4.2.2
 SPARQLWrapper==1.7.6
 urllib3
-
+pycurl
+#pycurl may require installing
+#1- sudo apt-get install libcurl4-openssl-dev
+#2- sudo apt-get install libssl-dev
