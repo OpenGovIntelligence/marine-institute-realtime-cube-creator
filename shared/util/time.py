@@ -19,7 +19,6 @@ class TimeOperations(object):
 
     # get yesterday time
     def getTimeFromEncoded(self):
-        time_from = "2010-01-01T00%3A00%3A00Z"
 
         # print encode(time_from)
 
@@ -35,8 +34,9 @@ class TimeOperations(object):
         print yesterday
 
         # print self.encode(yesterday.replace(microsecond=0).isoformat())
-        # @TODO uncomment after initial download
-        """time_from = self.encode(yesterday.replace(microsecond=0).isoformat())"""
+        # @TODO uncomment second line if initial download -- to get all the data since 2010
+        time_from = self.encode(yesterday.replace(microsecond=0).isoformat())
+        # time_from = "2010-01-01T00%3A00%3A00Z"
 
         print time_from
 
@@ -68,7 +68,6 @@ class TimeOperations(object):
         return time_to
 
     def getTimeFrom(self):
-        time_from = "2010-01-01T00%3A00%3A00Z"
 
         # print encode(time_from)
 
@@ -79,13 +78,13 @@ class TimeOperations(object):
         yesterday = datetime.datetime.now() - timedelta(days=1)
         # yesterday.strftime('%m%d%y')
 
-        print yesterday
+        # print yesterday
 
-        # @TODO uncomment after initial download
-        """time_from = yesterday.replace(microsecond=0).isoformat()"""
+        # @TODO uncomment second line if initial download -- to get all the data since 2010
+        time_from = yesterday.replace(microsecond=0).isoformat()
+        # time_from = "2010-01-01T00%3A00%3A00Z"
 
         print time_from
-
         return time_from
 
     def getTimeTo(self):

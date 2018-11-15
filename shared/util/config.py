@@ -28,7 +28,7 @@ ds_names['ds_IrishNationalTideGaugeNetwork'] = "IrishNationalTideGaugeNetwork"
 ds_names['ds_IWaveBNetwork_spectral'] = "IWaveBNetwork_spectral"
 ds_names['ds_IWaveBNetwork_zerocrossing'] = "IWaveBNetwork_zerocrossing"
 
-outputsCSV_dir =os.path.abspath( os.path.join(os.path.dirname(__file__),os.pardir,'outputsCSV'))
+outputsCSV_dir =os.path.abspath( os.path.join(os.path.dirname(__file__),os.pardir,'MI_polrtal_downloaded_CSVs'))
 outputsCSV_dir_for_builder = "/ogi-publishing-pipeline-realtime/outputsCSV"
 inputsSchemas_dir = "/ogi-publishing-pipeline-realtime/inputsSchemas"
     #os.path.abspath( os.path.join(os.path.dirname(__file__),os.pardir,'inputsSchemas'))

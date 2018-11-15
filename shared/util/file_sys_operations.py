@@ -5,10 +5,10 @@ import json
 import os
 
 #objects
-from util.mLogger import logee
+from mLogger import logee
 
 #vars
-from util.config import log_file, log_name, log_dir, outputsCSV_dir, skip_units_row
+from config import log_file, log_name, log_dir, outputsCSV_dir, skip_units_row
 
 class FileOperations:
 
