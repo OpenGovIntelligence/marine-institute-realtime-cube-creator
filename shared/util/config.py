@@ -23,10 +23,19 @@ cubeBuilderAPI = "http://localhost:4567/cubeBuilderAPI/cubeBuilderArgs?"
 
 #dataSets/inputsSchemas names turtle-stored
 ds_names = {}
-ds_names['ds_IWBNetwork'] = "IWBNetwork"
-ds_names['ds_IrishNationalTideGaugeNetwork'] = "IrishNationalTideGaugeNetwork"
-ds_names['ds_IWaveBNetwork_spectral'] = "IWaveBNetwork_spectral"
-ds_names['ds_IWaveBNetwork_zerocrossing'] = "IWaveBNetwork_zerocrossing"
+ds_names['IWBNetwork'] = "IWBNetwork"
+ds_names['IrishNationalTideGaugeNetwork'] = "IrishNationalTideGaugeNetwork"
+ds_names['IWaveBNetwork_spectral'] = "IWaveBNetwork_spectral"
+ds_names['IWaveBNetwork_zerocrossing'] = "IWaveBNetwork_zerocrossing"
+
+#assets for table2qb
+# /home/mohade/workspace/marine-institute-realtime-cube-creator/pipeline_components/b_table2qbAPI
+assets = {}
+assets['IWBNetwork'] = '/home/mohade/workspace/marine-institute-realtime-cube-creator/pipeline_components/b_table2qbAPI/Marine_Institute_table2qbwrapper_data/IWBNetwork'
+assets['IrishNationalTideGaugeNetwork'] = '/home/mohade/workspace/marine-institute-realtime-cube-creator/pipeline_components/b_table2qbAPI/Marine_Institute_table2qbwrapper_data/IrishNationalTideGaugeNetwork'
+assets['IWaveBNetwork_spectral'] = '/home/mohade/workspace/marine-institute-realtime-cube-creator/pipeline_components/b_table2qbAPI/Marine_Institute_table2qbwrapper_data/IWaveBNetwork_spectral'
+assets['IWaveBNetwork_zerocrossing'] = '/home/mohade/workspace/marine-institute-realtime-cube-creator/pipeline_components/b_table2qbAPI/Marine_Institute_table2qbwrapper_data/IWaveBNetwork_zerocrossing'
+
 
 outputsCSV_dir =os.path.abspath( os.path.join(os.path.dirname(__file__),os.pardir,'MI_polrtal_downloaded_CSVs'))
 outputsCSV_dir_for_builder = "/ogi-publishing-pipeline-realtime/outputsCSV"

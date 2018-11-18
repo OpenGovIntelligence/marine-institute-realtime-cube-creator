@@ -1,0 +1,142 @@
+{
+  "type": "index_hadoop",
+  "spec": {
+    "dataSchema": {
+      "metricsSpec": [
+        {
+          "type": "count",
+          "name": "count"
+        },
+        {
+          "type": "longSum",
+          "fieldName": "AtmosphericPressure",
+          "name": "AtmosphericPressure"
+        },
+        {
+          "type": "longSum",
+          "fieldName": "WindDirection",
+          "name": "WindDirection"
+        },
+        {
+          "type": "longSum",
+          "fieldName": "WindSpeed",
+          "name": "WindSpeed"
+        },
+        {
+          "type": "longSum",
+          "fieldName": "Gust",
+          "name": "Gust"
+        },
+        {
+          "type": "longSum",
+          "fieldName": "WaveHeight",
+          "name": "WaveHeight"
+        },
+        {
+          "type": "longSum",
+          "fieldName": "WavePeriod",
+          "name": "WavePeriod"
+        },
+        {
+          "type": "longSum",
+          "fieldName": "MeanWaveDirection",
+          "name": "MeanWaveDirection"
+        },
+        {
+          "type": "longSum",
+          "fieldName": "AirTemperature",
+          "name": "AirTemperature"
+        },
+        {
+          "type": "longSum",
+          "fieldName": "DewPoint",
+          "name": "DewPoint"
+        },
+        {
+          "type": "longSum",
+          "fieldName": "SeaTemperature",
+          "name": "SeaTemperature"
+        },
+        {
+          "type": "longSum",
+          "fieldName": "salinity",
+          "name": "salinity"
+        },
+        {
+          "type": "longSum",
+          "fieldName": "RelativeHumidity",
+          "name": "RelativeHumidity"
+        }
+      ],
+      "granularitySpec": {
+        "queryGranularity": "none",
+        "segmentGranularity": "day",
+        "type": "uniform",
+        "intervals": [
+          "2015-01-16/2018-01-23"
+        ]
+      },
+      "parser": {
+        "parseSpec": {
+          "dimensionsSpec": {
+            "dimensions": [
+              "station_id",
+              {
+                "type": "float",
+                "name": "longitude"
+              },
+              {
+                "type": "float",
+                "name": "latitude"
+              },
+              "time",
+              "QC_Flag"
+            ]
+          },
+          "timestampSpec": {
+            "column": "time",
+            "format": "auto"
+          },
+          "columns": [
+            "station_id",
+            "longitude",
+            "latitude",
+            "time",
+            "AtmosphericPressure",
+            "WindDirection",
+            "WindSpeed",
+            "Gust",
+            "WaveHeight",
+            "WavePeriod",
+            "MeanWaveDirection",
+            "Hmax",
+            "AirTemperature",
+            "DewPoint",
+            "SeaTemperature",
+            "salinity",
+            "RelativeHumidity",
+            "QC_Flag"
+          ],
+          "format": "json"
+        },
+        "type": "hadoopyString"
+      },
+      "dataSource": "IWBNetwork_test"
+    },
+    "tuningConfig": {
+      "jobProperties": {},
+      "type": "hadoop",
+      "partitionsSpec": {
+        "type": "hashed",
+        "targetPartitionSize": 5000000
+      }
+    },
+    "ioConfig": {
+      "type": "hadoop",
+      "inputSpec": {
+        "paths": "/home/mohade/ogitesting/druid/druid-0.10.1/datasets/ogi-sample-datasets/for_druid/marine/IWBNetwork/IWBNetwork.json",
+        "type": "static"
+      }
+    }
+  }
+}

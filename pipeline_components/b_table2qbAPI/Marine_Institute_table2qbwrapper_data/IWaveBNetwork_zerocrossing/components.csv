@@ -1,0 +1,11 @@
+Label,Description,Component Type,Codelist
+buoy_id,,Dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept-scheme/buoy_id
+time,,Dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept-scheme/time
+latitude,,Dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept-scheme/latitude
+longitude,,Dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept-scheme/longitude
+station_id,,Dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept-scheme/station_id
+Hmax,,Measure,
+HmaxPeriod,,Measure,
+Havg,,Measure,
+Tavg,,Measure,
+qcflag,,Measure,

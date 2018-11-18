@@ -1,0 +1,8 @@
+
+python table2qb-Wrapper.py codelist-pipeline IrishNationalTideGaugeNetwork http://www.opengovintelligence.eu/statistics/marine-institute/ irishnationaltidegaugenetwork ../Marine_Institute/IrishNationalTideGaugeNetwork/components.csv ../Marine_Institute/IrishNationalTideGaugeNetwork/input.csv ../Marine_Institute/IrishNationalTideGaugeNetwork/columns.csv
+
+python table2qb-Wrapper.py components-pipeline IrishNationalTideGaugeNetwork http://www.opengovintelligence.eu/statistics/marine-institute/ irishnationaltidegaugenetwork ../Marine_Institute/IrishNationalTideGaugeNetwork/components.csv ../Marine_Institute/IrishNationalTideGaugeNetwork/input.csv ../Marine_Institute/IrishNationalTideGaugeNetwork/columns.csv
+
+python table2qb-Wrapper.py cube-pipeline IrishNationalTideGaugeNetwork http://www.opengovintelligence.eu/statistics/marine-institute/ irishnationaltidegaugenetwork ../Marine_Institute/IrishNationalTideGaugeNetwork/components.csv ../Marine_Institute/IrishNationalTideGaugeNetwork/input.csv ../Marine_Institute/IrishNationalTideGaugeNetwork/columns.csv
+
+python table2qb-Wrapper.py codelist-pipeline IWaveBNetwork_spectral http://www.opengovintelligence.eu/statistics/marine-institute/ IWaveBNetwork_spectral ../Marine_Institute/IWaveBNetwork_spectral/components.csv ../Marine_Institute/IWaveBNetwork_spectral/input.csv ../Marine_Institute/IWaveBNetwork_spectral/columns.csv

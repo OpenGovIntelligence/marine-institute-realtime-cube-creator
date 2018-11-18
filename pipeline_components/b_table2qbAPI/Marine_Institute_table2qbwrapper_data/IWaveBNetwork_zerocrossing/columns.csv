@@ -1,0 +1,13 @@
+title,name,component_attachment,property_template,value_template,datatype,value_transformation
+buoy_id,buoy_id,qb:dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/dimension/buoy_id,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept/buoy_id/{buoy_id},string,
+time,time,qb:dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/dimension/time,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept/time/{time},string,
+latitude,latitude,qb:dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/dimension/latitude,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept/latitude/{latitude},string,
+longitude,longitude,qb:dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/dimension/longitude,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept/longitude/{longitude},string,
+station_id,station_id,qb:dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/dimension/station_id,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept/station_id/{station_id},string,slugize
+Hmax,hmax,qb:measure,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/hmax,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/hmax/{hmax},string,
+HmaxPeriod,hmaxperiod,qb:measure,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/hmaxperiod,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/hmaxperiod/{hmaxperiod},string,
+Havg,havg,qb:measure,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/havg,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/havg/{havg},string,
+Tavg,tavg,qb:measure,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/tavg,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/tavg/{tavg},string,
+qcflag,qcflag,qb:measure,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/qcflag,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/qcflag/{qcflag},string,
+value,value,,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/{measure_type},,number,
+Measure Type,measure_type,qb:dimension,http://purl.org/linked-data/cube#measureType,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/{measure_type},string,slugize

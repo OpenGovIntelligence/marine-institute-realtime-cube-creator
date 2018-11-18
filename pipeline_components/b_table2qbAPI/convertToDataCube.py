@@ -1,50 +1,33 @@
+# add outer modules
+import sys
 
-#objects
-from cubeBuilderAPI.cubeBuilder import CubeBuilder
-from util_bk.urlEncode import EncodeDecode
+# sys.path.insert(0, '/home/mohade/workspace/marine-institute-realtime-cube-creator/shared')
+sys.path.append(
+    '/home/mohade/workspace/marine-institute-realtime-cube-creator/pipeline_components/b_table2qbAPI/table2qb_wrapper/table2qb-preprocessor')
 
-#vars
-from util_bk.config import cubeBuilderAPI, outputsCSV_dir_for_builder, inputsSchemas_dir, outputsCubes_dir
+from table2qb_preprocessor.table2qb_Wrapper import Table2qbAPI
+
+class Table2qbAPI(object):
+
+    def __init__(self):
+        self.table2qb = Table2qbAPI()
+
+        self.pipeline = ''
+        self.slug = ''
+        self.datasetname = ''
+        self.baseURI = ''
+
+        self._input_components = ''
+        self._input_observations = ''
+        self._input_columns = ''
+
+    def start_conversion(self, obs_file_path):
+        print 'starting rdf cube building!'
+
+        # get csv observation files
+
+        # get componnets csv files
+
+        #get columns csv files
 
 
-
-
-global cubebuilder
-cubebuilder = CubeBuilder()
-
-
-
-#sending post request to the cube builderr service
-cubebuilder.transformToRDFcube_POST(
-
-    cubeBuilderAPI,
-    outputsCSV_dir_for_builder,
-    "IrishNationalTideGaugeNetwork__SRARTED__2017-09-11T16:42:57__TO__2017-09-12T16:42:57.csv",
-    inputsSchemas_dir,
-    "IrishNationalTideGaugeNetwork",
-    "TURTLE",
-    "TURTLE",
-    outputsCubes_dir,
-    "IrishNationalTideGaugeNetwork__SRARTED__2017-09-11T16:42:57__TO__2017-09-12T16:42:5"#without .csv
-
-)
-
-
-#transformToRDFcube(self, cubebuilderapi, csv_file_path, csv_file_name, schema_path,schema_name, serialization_in,
-                           #serialization_out, qbpath, qbname):
-
-cubebuilder.transformToRDFcube_GET(
-
-    cubeBuilderAPI,
-    outputsCSV_dir_for_builder,
-    "IrishNationalTideGaugeNetwork__SRARTED__2017-09-11T16:42:57__TO__2017-09-12T16:42:57.csv",
-    inputsSchemas_dir,
-    "IrishNationalTideGaugeNetwork",
-    "TURTLE",
-    "TURTLE",
-    outputsCubes_dir,
-    "IrishNationalTideGaugeNetwork__SRARTED__2017-09-11T16:42:57__TO__2017-09-12T16:42:5"#without .csv
-
-)
-
-"http://localhost:4567/cubeBuilderAPI/cubeBuilderArgs?csv=/Users/mohade/GoogleDrive/__MYPERSONALBACKUP/TEMP-WAITING-ORGANIZATION/3-workspace/ogi-publishing-pipeline-realtime/outputsCSV/IrishNationalTideGaugeNetwork__SRARTED__2017-09-10T18%3A27%3A46__TO__2017-09-11T18%3A27%3A46.csv&schema=/Users/mohade/GoogleDrive/__MYPERSONALBACKUP/TEMP-WAITING-ORGANIZATION/3-workspace/ogi-publishing-pipeline-realtime/inputsSchemas/IrishNationalTideGaugeNetwork_output.ttl&serializationIn=TURTLE&serializationOut=TURTLE&qbPath=/Users/mohade/GoogleDrive/__MYPERSONALBACKUP/TEMP-WAITING-ORGANIZATION/3-workspace/ogi-publishing-pipeline-realtime/outputsCubes/&qbName=IrishNationalTideGaugeNetwork__SRARTED__2017-09-10T18%3A27%3A46__TO__2017-09-11T18%3A27%3A46.ttl"

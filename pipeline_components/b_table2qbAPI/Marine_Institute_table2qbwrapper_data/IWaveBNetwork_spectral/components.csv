@@ -1,0 +1,14 @@
+Label,Description,Component Type,Codelist
+buoy_id,,Dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept-scheme/buoy_id
+time,,Dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept-scheme/time
+latitude,,Dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept-scheme/latitude
+longitude,,Dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept-scheme/longitude
+station_id,,Dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept-scheme/station_id
+PeakDirection,,Measure,
+PeakSpread,,Measure,
+SignificantWaveHeight,,Measure,
+EnergyPeriod,,Measure,
+MeanWavePeriod_Tm01,,Measure,
+MeanWavePeriod_Tm02,,Measure,
+PeakPeriod,,Measure,
+qcflag,,Measure,

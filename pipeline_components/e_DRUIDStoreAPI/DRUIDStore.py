@@ -2,6 +2,7 @@ from subprocess import call
 import pycurl
 import json
 
+#@TODO check this --> http://druid.io/docs/latest/tutorials/tutorial-streams.html
 
 class DRUID(object):
 

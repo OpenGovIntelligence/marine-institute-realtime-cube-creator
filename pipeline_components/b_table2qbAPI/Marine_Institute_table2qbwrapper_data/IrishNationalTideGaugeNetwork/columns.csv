@@ -1,0 +1,13 @@
+title,name,component_attachment,property_template,value_template,datatype,value_transformation
+longitude,longitude,qb:dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/dimension/longitude,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept/longitude/{longitude},string,
+latitude,latitude,qb:dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/dimension/latitude,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept/latitude/{latitude},string,
+altitude,altitude,qb:dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/dimension/altitude,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept/altitude/{altitude},string,
+time,time,qb:dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/dimension/time,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept/time/{time},string,
+station_id,station_id,qb:dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/dimension/station_id,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept/station_id/{station_id},string,slugize
+datasourceid,datasourceid,qb:dimension,http://www.opengovintelligence.eu/statistics/marine-institute/def/dimension/datasourceid,http://www.opengovintelligence.eu/statistics/marine-institute/def/concept/datasourceid/{datasourceid},string,
+Water_Level,water_level,qb:measure,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/water_level,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/water_level/{water_level},string,
+Water_Level_LAT,water_level_lat,qb:measure,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/water_level_lat,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/water_level_lat/{water_level_lat},string,
+Water_Level_OD_Malin,water_level_od_malin,qb:measure,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/water_level_od_malin,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/water_level_od_malin/{water_level_od_malin},string,
+QC_Flag,qc_flag,qb:measure,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/qc_flag,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/qc_flag/{qf_flag},string,
+value,value,,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/{measure_type},,string,
+Measure Type,measure_type,qb:dimension,http://purl.org/linked-data/cube#measureType,http://www.opengovintelligence.eu/statistics/marine-institute/def/measure/{measure_type},string,slugize
