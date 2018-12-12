@@ -55,8 +55,8 @@ class RDFStoreAPI:
                + ' --data-urlencode "' + testing_graph_name + '"'
 
         """
-        curl -X PUT/POST --digest -u "dba:deriegovvirtuoso" -T "/Users/mohade/GoogleDrive/__MYPERSONALBACKUP/TEMP-WAITING-ORGANIZATION/3-workspace/ogi-publishing-pipeline-realtime/rdfDataStoreAPI/test.ttl" -G "http://vmogi01.deri.ie:8000/sparql-graph-crud-auth" --data-urlencode "graph=http://someaddress:8890/db"
-        
+        curl -X PUT/POST --digest -u "dba:deriegovvirtuoso" -T "/Users//test.ttl" -G "http://vmogi01.deri.ie:8000/sparql-graph-crud-auth" --data-urlencode "graph=http://someaddress:8890/db"
+
         """
 
         print curl

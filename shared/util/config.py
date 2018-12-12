@@ -50,7 +50,7 @@ endpoint_rdf_store_url = "http://vmogi01.deri.ie:8000/sparql"
 endpoint_rdf_store_url_crud = "http://vmogi01.deri.ie:8000/sparql-graph-crud-auth"
 endpoint_user_name = "dba"
 endpoint_password = "deriegovvirtuoso"
-testing_graph_name = "graph=http://test:8890/db"
+testing_graph_name = "graph=http://localhost:8890/DAV" #http://test:8890/db
 
 prefixes = """
 PREFIX dccs:  <http://data.gmdsp.org.uk/data/example/stats/dccs/>  \n
