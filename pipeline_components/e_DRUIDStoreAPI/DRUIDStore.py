@@ -71,12 +71,12 @@ class DRUID(object):
 if __name__ == '__main__':
     druid = DRUID()
     ###pycurl
-    druid.push_observations_to_druid_BATCH(druidServer='vmogi01.deri.ie:8090/druid/indexer/v1/task',
+    druid.push_observations_to_druid_BATCH(druidServer='****:8090/druid/indexer/v1/task',
                                            schemaFile='schema_IWBNetwork.json',
-                                           observations_file_path='/home/mohade/ogitesting/druid/druid-0.10.1/datasets/ogi-sample-datasets/for_druid/marine/IWBNetwork/IWBNetwork.json',
+                                           observations_file_path='*****s/druid/druid-0.10.1/datasets/ogi-sample-datasets/for_druid/marine/IWBNetwork/IWBNetwork.json',
                                            method='pycurl')
     ###curl
-    druid.push_observations_to_druid_BATCH(druidServer='vmogi01.deri.ie:8090/druid/indexer/v1/task',
+    druid.push_observations_to_druid_BATCH(druidServer='****:8090/druid/indexer/v1/task',
                                            schemaFile='schema_IWBNetwork.json',
-                                           observations_file_path='/home/mohade/ogitesting/druid/druid-0.10.1/datasets/ogi-sample-datasets/for_druid/marine/IWBNetwork/IWBNetwork.json',
+                                           observations_file_path='******s/druid/druid-0.10.1/datasets/ogi-sample-datasets/for_druid/marine/IWBNetwork/IWBNetwork.json',
                                            method='curl')

@@ -9,17 +9,10 @@ log_name="ogi-realtime-service"
 
 
 #cube builder API
-cubeBuilderAPI = "http://localhost:4567/cubeBuilderAPI/cubeBuilderArgs?"
+cubeBuilderAPI = "********:4567/cubeBuilderAPI/cubeBuilderArgs?"
 
-"""
-"> http://localhost:4567/cubeBuilderAPI/cubeBuilderArgs?" \
-"csv=/ogi-CubeSchema-creator/example_1/IWaveBNetwork_spectral.csv" \
-"&schema=/ogi-cubebuilder/src/main/resources/IWaveBNetowrk_spectral_output.ttl" \
-"&serializationIn=TURTLE" \
-"&serializationOut=TURTLE" \
-"&qbPath=/ogi-cubebuilder/test_output/" \
-"&qbName=webtest.ttl"
-"""
+
+druidServer = 'vmogi01.deri.ie:8090/druid/indexer/v1/task'
 
 #dataSets/inputsSchemas names turtle-stored
 ds_names = {}
@@ -50,7 +43,7 @@ endpoint_rdf_store_url = "http://vmogi01.deri.ie:8000/sparql"
 endpoint_rdf_store_url_crud = "http://vmogi01.deri.ie:8000/sparql-graph-crud-auth"
 endpoint_user_name = "dba"
 endpoint_password = "deriegovvirtuoso"
-testing_graph_name = "graph=http://localhost:8890/DAV" #http://test:8890/db
+testing_graph_name = "graph=http://localhost:8890/DAV"
 
 prefixes = """
 PREFIX dccs:  <http://data.gmdsp.org.uk/data/example/stats/dccs/>  \n
@@ -78,48 +71,4 @@ PREFIX sdmx-measure:  <http://purl.org/linked-data/sdmx/2009/measure#>  \n
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>  \n
 PREFIX sdmx-code:  <http://purl.org/linked-data/sdmx/2009/code#>  \n
 PREFIX interval:  <http://reference.data.gov.uk/def/intervals/>  \n
-"""
-
-"""
-
-
-https://erddap.marine.ie/erddap/griddap/IMI_EATL_WAVE.csv?
-
-
-significant_wave_height
-
-[(2017-09-16T21:00:00Z):1:(2017-09-16T21:00:00Z)]
-[(36.5125):1:(59.987500000000004)]
-[(-19.9875):1:(-0.01249999999999929)]
-
-,
-swell_wave_height
-
-[(2017-09-16T21:00:00Z):1:(2017-09-16T21:00:00Z)]
-[(36.5125):1:(59.987500000000004)]
-[(-19.9875):1:(-0.01249999999999929)]
-
-,
-mean_wave_direction
-
-[(2017-09-16T21:00:00Z):1:(2017-09-16T21:00:00Z)]
-[(36.5125):1:(59.987500000000004)]
-[(-19.9875):1:(-0.01249999999999929)]
-,
-mean_wave_period
-
-[(2017-09-16T21:00:00Z):1:(2017-09-16T21:00:00Z)]
-[(36.5125):1:(59.987500000000004)]
-[(-19.9875):1:(-0.01249999999999929)]
-
-
-https://erddap.marine.ie/erddap/tabledap/IWBNetwork.csv?
-
-station_id%2Clongitude%2Clatitude%2Ctime%2CAtmosphericPressure%2CWindDirection%2CWindSpeed%2CGust%2CWaveHeight%2CWavePeriod%2CMeanWaveDirection%2CHmax%2CAirTemperature%2CDewPoint%2CSeaTemperature%2Csalinity%2CRelativeHumidity%2CQC_Flag&
-
-time%3E=2017-09-04T00%3A00%3A00Z
-
-https://erddap.marine.ie/erddap/tabledap/IWaveBNetwork_spectral.csv?buoy_id%2Ctime%2Clatitude%2Clongitude%2Cstation_id%2CPeakDirection%2CPeakSpread%2CSignificantWaveHeight%2CEnergyPeriod%2CMeanWavePeriod_Tm01%2CMeanWavePeriod_Tm02%2CPeakPeriod%2Cqcflag&time%3E=2017-09-08T16%3A49%3A20Z
-
-
 """

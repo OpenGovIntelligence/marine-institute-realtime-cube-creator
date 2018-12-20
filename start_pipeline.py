@@ -15,10 +15,12 @@ from datetime import timedelta
 from a_marineDataAPI.marineAPI import MarineDataPortalApi
 from b_table2qbAPI.table2qb_wrapper.table2qb_preprocessor.table2qb_Wrapper import table2qbWrapper
 from c_rdfDataStoreAPI.RDFStore import RDFStoreAPI
+from d_cubiQLAPI.cubiqlAPI import cubiqlAPI
+from e_DRUIDStoreAPI.DRUIDStore import DRUID
 
 # pipeline_components/b_table2qbAPI/table2qb_wrapper/table2qb_preprocessor
 
-from util.config import assets, ds_names
+from util.config import assets, ds_names, druidServer
 
 global marineapi
 marineapi = MarineDataPortalApi()
@@ -28,6 +30,14 @@ t2qbapi = table2qbWrapper()
 
 global rdfstoreapi
 rdfstoreapi = RDFStoreAPI()
+
+global cubiqlapi
+cubiqlapi = cubiqlAPI()
+
+global druid
+druid = DRUID()
+
+
 
 global baseuri
 baseuri = 'http://www.opengovintelligence.eu/statistics/marine-institute/'
@@ -112,60 +122,23 @@ def job(t):
         for part in ds['cube_path']:
             rdfstoreapi.push_curl(part)
 
-    # D - push cubes- components - codelists to rdf store
+    # D - get created cubes in json with structure ready for pushing to DRUID
+    retrieved_json_cubes_path_info = {}
 
+    for ds in ds_names:
+        """ use cubiql api fucntion to retrieve and store json cubes """
+        retrieved_json_cubes_path_info[ds] = ''
+    # E - push retrieved json cubes to DRUID server
 
+    for ds in ds_names:
 
+        ### using pycurl
+        druid.push_observations_to_druid_BATCH(druidServer=druidServer,
+                                               schemaFile='druid_schemas/schema_'+ds+'.json',
+                                               #observations_file_path='/home/mohade/ogitesting/druid/druid-0.10.1/datasets/ogi-sample-datasets/for_druid/marine/IWBNetwork/IWBNetwork.json',
+                                               observations_file_path=retrieved_json_cubes_path_info[ds],
+                                               method='pycurl')
 
-#
-# """screen scheduled_tasks.py"""
-# def ds_tasks(api, time_from):
-#
-#     temp_csv_data =  ds_api.get_csv(api, time_from, "jjj")
-#     print temp_csv_data
-#
-#
-#
-#     ds_api.put_csv_to_file(temp_csv_data, file_name=api+"_"+decode(time_from).replace(" ","_"))
-#     ds_api.transform_to_rdfcube(api, csv_file_path="/ogi-publishing-pipeline-realtime/MI_ds1_data/", csv_file_name=api+"_"+decode(time_from).replace(" ","_")+".csv", qbpath="/ogi-publishing-pipeline-realtime/MI_ds1_data/", qbname=api+"_"+decode(time_from).replace(" ","_")+".ttl")
-#     #ds_api.push_to_rdf_datastore()
-#     print "done "+ api + "! file:"+ api+"_"+decode(time_from)
-#     return
-#
-# def prepare_time_from():
-#
-#     time_from = "time%3E=2017-06-07T00%3A00%3A00Z"
-#
-#     # print encode(time_from)
-#
-#     # print decode(time_from)
-#
-#     print time_from
-#     print datetime.datetime.now().replace(microsecond=0).isoformat()
-#     print encode(datetime.datetime.now().replace(microsecond=0).isoformat())
-#
-#     yesterday = datetime.datetime.now() - timedelta(days=1)
-#     yesterday.strftime('%m%d%y')
-#
-#     print yesterday
-#
-#     print encode(yesterday.replace(microsecond=0).isoformat())
-#
-#     time_from = encode(yesterday.replace(microsecond=0).isoformat())
-#
-#     return time_from
-#
-# def encode(URL):
-#     URI_encoded = urllib.quote_plus(URL)
-#     #   print URI_encoded
-#     return URI_encoded
-#
-#
-# def decode(URL):
-#     URI_decoded = urllib.unquote(URL)
-#     #   print URI_encoded
-#     return URI_decoded
-#
 
 job("is started")
 
