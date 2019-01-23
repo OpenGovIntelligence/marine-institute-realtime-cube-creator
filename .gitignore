@@ -48,8 +48,4 @@ data/
 *_bk
 pipeline_components/b_table2qbAPI/table2qb_wrapper/table2qb_preprocessor/table2qb.jar
 *.jar
-data/table2qb_generated_files/_181116_134722/cube_IrishNationalTideGaugeNetwork_p0.ttl
-data/table2qb_generated_files/_181116_141544/cube_IrishNationalTideGaugeNetwork_p0.ttl
-data/table2qb_generated_files/_181116_120421/cube_IrishNationalTideGaugeNetwork_p0.ttl
-data/table2qb_generated_files/_181116_131834/cube_IrishNationalTideGaugeNetwork_p0.ttl
-
+data/table2qb_generated_files/*
